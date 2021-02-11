@@ -15,12 +15,12 @@ The **Let's Go Viral** team is composed of Matt Kaufmann, Ryan Lindsey, Jessica 
 
 ### Interesting Notes
 
-The initial spark for the idea of this project came firstly out of my interest in public health as I come from a toxicology background. and my teammates large 
-background in engineering, finance, and tech, combined with the burning curiosity of "could we better handle the race against the current pandemic." We wanted to 
-look at how viruses spread, what what could have caused this one to spread like wildfire? Of course, one of the most dangerous aspects of a virus is it's ability to 
-rapidly mutate, which can only happen inside of a host. When the virus hijacks your lung tissue and creates many copies of itself, small mutations cause this virus
-to be slightly different from the one that infected you. If this happens enough times (AKA enough infections occur) you may occassionally get a strain of the virus 
-far more aggressive and virulent.
+The initial spark for the idea of this project came firstly out of my interest in public health as I come from a toxicology background and my teammates largely have 
+backgrounds in engineering, finance, and tech, combined with the burning curiosity of "could we better handle the race against the current pandemic?" We wanted to 
+look at how viruses spread, and what could have caused this one to spread like wildfire? Of course, one of the most dangerous aspects of a virus is its ability to 
+rapidly mutate, which can only happen inside of a host. When the virus hijacks your lung tissue and creates many copies of itself, small mutations in the virus RNA 
+cause this virus to be slightly different from the one that infected you. If this happens enough times (AKA enough infections occur) you may occassionally get a 
+strain of the virus far more aggressive and virulent.
 
 When you look at it from this perspective, the approach of vaccinating the most susceptible to complications first, rather than the most susceptible to infection, 
 may actually be doing more harm than good. This is the question we are setting out to solve, who are these people most susceptible to the virus?
@@ -29,7 +29,7 @@ may actually be doing more harm than good. This is the question we are setting o
 
 ### Flu Data
 
-+ As of now, we have secured a great resources on influenza data from the past 10 years in all 50 states across the USA. This data is coming from data.world
++ As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from data.world
 
 ### Socioeconomic metrics
 
@@ -52,7 +52,7 @@ desired goal.
 + We will definitely use Python for all statistical analysis, data cleaning, and ML model training. While R is great for statistics, libraries such as SciPy, NumPy,
 and even Matplotlib are so well integrated, as well as Pandas, that for the sake of work flow, we'll stick to Python.
 
-+ Secondly we'll use javascript, as this will open up Leaflet.js to us as well as webscraping abilities if we need to use those.
++ Secondly we'll use Javascript, as this will open up Leaflet.js to us as well as Plotly.
 
 **Databases**
 
