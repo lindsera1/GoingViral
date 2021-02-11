@@ -47,23 +47,23 @@ convert to population density per county. In case we decide to scale up, I have 
 While we'll maintain an open mind about the tools that will best suit us in our data journey, we do have an idea of what will be needed to at least execute our 
 desired goal.
 
-- Programming Languages
+**Programming Languages**
 
 + We will definitely use Python for all statistical analysis, data cleaning, and ML model training. While R is great for statistics, libraries such as SciPy, NumPy,
 and even Matplotlib are so well integrated, as well as Pandas, that for the sake of work flow, we'll stick to Python.
 
 + Secondly we'll use javascript, as this will open up Leaflet.js to us as well as webscraping abilities if we need to use those.
 
-- Databases
+**Databases**
 
 + I do believe that for the sake of being able to do joins, relate primary and foreign keys, an SQL databases like Postgres will serve our needs best.
 
-- Machine Learning Models
+**Machine Learning Models**
 
 + This is undoubtedly a linear regression problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above; we may as well
 need to use some resampling techniques if influenza rates are far too low compared to total population.
 
-- Data Visualization
+**Data Visualization**
 
 + We may take advantage of Leaflet.js to create heatmaps, which would be a great visualization tool to see where exactly the highest concetrations are, as well
 as being able to see GDP, PCI, population density overlaying those maps. For our final presentation we'll use Tableau.
