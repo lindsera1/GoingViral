@@ -39,7 +39,7 @@ is https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas.
 + For PCI (per capita income) I have sourced an excel spreadsheet from the same source with the same metrics: https://www.bea.gov/data/income-saving/personal-
 income-county-metro-and-other-areas.
 
-+ For population density, I have sourced CSV files four both total square mileage per county, as well as population in CSV files, and will need some further ETL to
++ For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
 convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale. 
 
 ## Technologies
