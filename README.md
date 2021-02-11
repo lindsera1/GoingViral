@@ -15,7 +15,7 @@ The **Let's Go Viral** team is composed of Matt Kaufmann, Ryan Lindsey, Jessica 
 
 ### Interesting Notes
 
-The initial spark for the idea of this project came firstly out of my interest in public health as I come from a toxicology background and my teammates largely have 
+The initial spark for the idea of this project came firstly out of my interest in public health as I come from a toxicology background and my teammates having 
 backgrounds in engineering, finance, and tech, combined with the burning curiosity of "could we better handle the race against the current pandemic?" We wanted to 
 look at how viruses spread, and what could have caused this one to spread like wildfire? Of course, one of the most dangerous aspects of a virus is its ability to 
 rapidly mutate, which can only happen inside of a host. When the virus hijacks your lung tissue and creates many copies of itself, small mutations in the virus RNA 
