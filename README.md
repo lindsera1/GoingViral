@@ -1,3 +1,4 @@
+
 # GoingViral - An Explosive Project
 
 ## Summary
@@ -10,6 +11,8 @@ one, as virologists are calling this now a "race against the virus".
 Our team is going to look at viral load/concentration across a few geopolitical areas, namely the Northeast, Southeast, Southwest, and Western regions from the past
 three years, and measure the congruence of metrics such as GDP, PCI, population density, education, and proximity to major hospitals in the states of these regions. 
 The model will accurately predict who the most susceptible populations are to influenza infection, and perhaps propose a new approach to the target population we are vaccinating.
+
+
 
 The **Let's Go Viral** team is composed of the following people:
 1. Matt Kaufmann
@@ -33,6 +36,7 @@ may actually be doing more harm than good. This is the question we are setting o
 
 ### Flu Data
 
+
 + As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from the CDC's FluView 
 Interactive application.
 
@@ -47,7 +51,10 @@ income-county-metro-and-other-areas.
 + For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
 convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale. 
 
++ For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at https://www.census.gov/library/publications/2020/demo/p60-271.html
+
 ## Technologies
+
 
 While we'll maintain an open mind about the tools that will best suit us in our data journey, we do have an idea of what will be needed to at least execute our 
 desired goal.
