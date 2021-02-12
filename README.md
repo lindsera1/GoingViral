@@ -30,7 +30,7 @@ may actually be doing more harm than good. This is the question we are setting o
 ### Flu Data
 
 + As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from the CDC's FluView 
-Interactive
+Interactive website.
 
 ### Socioeconomic metrics
 
