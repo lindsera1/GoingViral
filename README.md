@@ -11,7 +11,11 @@ Our team is going to look at viral load/concentration across a few geopolitical 
 three years, and measure the congruence of metrics such as GDP, PCI, population density, education, and proximity to major hospitals in the states of these regions. 
 The model will accurately predict who the most susceptible populations are to influenza infection, and perhaps propose a new approach to the target population we are vaccinating.
 
-The **Let's Go Viral** team is composed of Matt Kaufmann, Ryan Lindsey, Jessica Dafler, and Patrick Ekanga.
+The **Let's Go Viral** team is composed of the following people:
+1. Matt Kaufmann
+2. Ryan Lindsey
+3. Jessica Dafler
+4. Patrick Ekanga.
 
 ### Interesting Notes
 
