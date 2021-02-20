@@ -31,7 +31,7 @@ may actually be doing more harm than good. This is the question we are setting o
 ### Flu Data
 
 + As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from the CDC's FluView 
-Interactive application.
+Interactive application: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html 
 
 ### Socioeconomic metrics
 
@@ -44,8 +44,7 @@ income-county-metro-and-other-areas.
 + For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
 convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
 
-+ For viral concentration: The CDC's FluView Interactive web app was used to provide data for cases from 2016-2019: 
-https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html 
+
 
 ## Technologies
 
