@@ -7,9 +7,10 @@ approach to how and who we vaccinate? As of the past few weeks, we managed great
 and getting them vaccinated, but are we slowing down the virus as much as we could be? There is now fear of mutated variants that could reset us back to square
 one, as virologists are calling this now a "race against the virus". 
 
-Our team is going to look at viral load/concentration across a few geopolitical areas, namely the Northeast, Southeast, Southwest, and Western regions from the past
-three years, and measure the congruence of metrics such as GDP, PCI, population density, education, and proximity to major hospitals in the states of these regions. 
-The model will accurately predict who the most susceptible populations are to influenza infection, and perhaps propose a new approach to the target population we are vaccinating.
+Our team is going to examine flu viral case load/concentrations from the years 2016 to 2019 for all 50 states and Washington D.C. 
+and measure the congruence of metrics such as GDP, PCI, population density, and the percentage of the population uninsured and how these metrics impact the viral 
+concentrations for each state. The model will predict the most susceptible populations to influenza infections, and perhaps propose a new approach 
+to the target population we are vaccinating.
 
 The **Let's Go Viral** team is composed of Matt Kaufmann, Ryan Lindsey, Jessica Dafler, and Patrick Ekanga.
 
@@ -41,7 +42,10 @@ is https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas.
 income-county-metro-and-other-areas.
 
 + For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
-convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale. 
+convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
+
++ For viral concentration: The CDC's FluView Interactive web app was used to provide data for cases from 2016-2019: 
+https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html 
 
 ## Technologies
 
@@ -61,7 +65,7 @@ and even Matplotlib are so well integrated, as well as Pandas, that for the sake
 
 **Machine Learning Models**
 
-+ This is undoubtedly a linear regression problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above; we may as well
++ This is a multi-factorial problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above; we may as well
 need to use some resampling techniques if influenza rates are far too low compared to total population.
 
 **Data Visualization**
@@ -72,4 +76,3 @@ as being able to see GDP, PCI, population density overlaying those maps. For our
 ## Communication
 
 Our team will be communicating through Slack, keeping track of tasks through Trello, and hold face to face meetings through Zoom.
-
