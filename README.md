@@ -39,15 +39,22 @@ may actually be doing more harm than good. This is the question we are setting o
 
 
 + As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from the CDC's FluView 
+
+Interactive application: [flu_data](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html).
+
 Interactive application: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html 
 
 ### Socioeconomic metrics
 
-+  For GDP (gross domestic product) I have sourced an excel spreadsheet containing GDP of every county in every state from the past 3 years. The link to the website 
-is https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas.
++  For GDP (gross domestic product), we downloaded files containing GDP of every states and county from the past 4 years. The dataset was cleaned with with python in pandas to be properly used thereafter. The link to the website is [gdp_link](https://apps.bea.gov/regional/downloadzip.cfm).
 
-+ For PCI (per capita income) I have sourced an excel spreadsheet from the same source with the same metrics: https://www.bea.gov/data/income-saving/personal-
-income-county-metro-and-other-areas.
++ For PCI (per capita income) I have sourced an excel spreadsheet from the same source with the same metrics: Link the the to the dataset is[PCI](https://www.bea.gov/data/income-saving/personal-income-county-metro-and-other-areas).
+
++ For population density, we  sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
+convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
+
+
++ For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at [uninsured](https://www.census.gov/library/publications/2020/demo/p60-271.html).
 
 + For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
 convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
@@ -55,6 +62,7 @@ convert to population density per county. In case we decide to scale up, I have 
 
 
 + For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at https://www.census.gov/library/publications/2020/demo/p60-271.html
+
 
 ## Technologies
 
@@ -64,15 +72,15 @@ desired goal.
 
 **Programming Languages**
 
-+ We will definitely use Python for all statistical analysis, data cleaning, and ML model training. While R is great for statistics, libraries such as SciPy, NumPy,
++ We will use Python for all statistical analysis, data cleaning, and ML model training. While R is great for statistics, libraries such as SciPy, NumPy,
 and even Matplotlib are so well integrated, as well as Pandas, that for the sake of work flow, we'll stick to Python.
 
-+ Secondly we'll use Javascript, as this will open up Leaflet.js to us as well as Plotly.
++ Secondly we'll use Javascript, as this will open up Leaflet.js, plotly and seaborn for correlation.
 
 **Databases**
 
-+ I do believe that for the sake of being able to do joins, relate primary and foreign keys, an SQL databases like Postgres will serve our needs best.
-
++ We are using postgres database and hosted on Heroku. Every team member will be able to upload and query the SQL database, creditials created for each one.
+  
 **Machine Learning Models**
 
 + This is a multi-factorial problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above; we may as well
