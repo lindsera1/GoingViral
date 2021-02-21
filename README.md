@@ -39,7 +39,10 @@ may actually be doing more harm than good. This is the question we are setting o
 
 
 + As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from the CDC's FluView 
+
 Interactive application: [flu_data](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html).
+
+Interactive application: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html 
 
 ### Socioeconomic metrics
 
@@ -53,7 +56,16 @@ convert to population density per county. In case we decide to scale up, I have 
 
 + For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at [uninsured](https://www.census.gov/library/publications/2020/demo/p60-271.html).
 
++ For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
+convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
+
+
+
++ For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at https://www.census.gov/library/publications/2020/demo/p60-271.html
+
+
 ## Technologies
+
 
 While we'll maintain an open mind about the tools that will best suit us in our data journey, we do have an idea of what will be needed to at least execute our 
 desired goal.
