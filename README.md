@@ -27,7 +27,7 @@ The initial spark for the idea of this project came firstly out of my interest i
 backgrounds in engineering, finance, and tech, combined with the burning curiosity of "could we better handle the race against the current pandemic?" We wanted to 
 look at how viruses spread, and what could have caused this one to spread like wildfire? Of course, one of the most dangerous aspects of a virus is its ability to 
 rapidly mutate, which can only happen inside of a host. When the virus hijacks your lung tissue and creates many copies of itself, small mutations in the virus RNA 
-cause this virus to be slightly different from the one that infected you. If this happens enough times (AKA enough infections occur) you may occassionally get a 
+cause this virus to be slightly different from the one that infected you. If this happens enough times (AKA enough infections occur) you may occasionally get a 
 strain of the virus far more aggressive and virulent.
 
 When you look at it from this perspective, the approach of vaccinating the most susceptible to complications first, rather than the most susceptible to infection, 
@@ -54,12 +54,14 @@ Interactive application: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.ht
 convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
 
 
+
++ For PCI (per capita income) the data source used was a combination of per state csv files combined to create a dataset to reflect the annual medial personal income per state. Source: https://fred.stlouisfed.org/release?rid=110
+
 + For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at [uninsured](https://www.census.gov/library/publications/2020/demo/p60-271.html).
+
 
 + For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
 convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
-
-
 
 + For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at https://www.census.gov/library/publications/2020/demo/p60-271.html
 
@@ -79,12 +81,18 @@ and even Matplotlib are so well integrated, as well as Pandas, that for the sake
 
 **Databases**
 
+
++ I do believe that for the sake of being able to do joins, relate primary and foreign keys, an SQL databases like Postgres will serve our needs best. The database is hosted in DBeaver:
+<img src="ER_Diagram.png" alt="ER_Diagram">
+
+
 + We are using postgres database and hosted on Heroku. Every team member will be able to upload and query the SQL database, creditials created for each one.
   
+
 **Machine Learning Models**
 
 + This is a multi-factorial problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above; we may as well
-need to use some resampling techniques if influenza rates are far too low compared to total population.
+need to use some resampling techniques if influenza rates are far too low compared to total population. Linear (Single and Multiple) Regression shows that no independent variable can predict viral concentration. The Random Forest Regression and K clustering is being used to test cross validation and explore the variety of variables with no obvious groupings. 
 
 **Data Visualization**
 
@@ -93,4 +101,4 @@ as being able to see GDP, PCI, population density overlaying those maps. For our
 
 ## Communication
 
-Our team will be communicating through Slack, keeping track of tasks through Trello, and hold face to face meetings through Zoom.
+Our team will be communicating through Slack, keeping track of tasks through Trello , and hold face to face meetings through Zoom.
