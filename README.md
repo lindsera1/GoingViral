@@ -82,23 +82,22 @@ and even Matplotlib are so well integrated, as well as Pandas, that for the sake
 **Databases**
 
 
-+ I do believe that for the sake of being able to do joins, relate primary and foreign keys, an SQL databases like Postgres will serve our needs best. The database is hosted in DBeaver:
++ I do believe that for the sake of being able to do joins, relate primary and foreign keys, an SQL databases like Postgres will serve our needs best. We are using the database administration tool DBeaver:
 <img src="ER_Diagram.png" alt="ER_Diagram">
 
 
-+ We are using postgres database and hosted on Heroku. Every team member will be able to upload and query the SQL database, creditials created for each one.
++ We are using postgres database and hosted on Heroku. Every team member will be able to upload and query the SQL database, credentials created for each one.
   
 
 **Machine Learning Models**
 
-+ This is a multi-factorial problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above; we may as well
-need to use some resampling techniques if influenza rates are far too low compared to total population. Linear (Single and Multiple) Regression shows that no independent variable can predict viral concentration. The Random Forest Regression and K clustering is being used to test cross validation and explore the variety of variables with no obvious groupings. 
++ This is a multi-factorial problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above. We may also need to utilize some resampling techniques if the influenza rates are too low in comparison to the total population. Linear (Single and Multiple) Regression models show that no independent variable can predict viral concentration. The Random Forest Regression and KMeans clustering models are being used to test cross validation and explore the variability of the variables for patterns of similarity and to determine the predictive power of the variable in regards to viral concentration with respect to state. 
 
 **Data Visualization**
 
-+ We may take advantage of Leaflet.js to create heatmaps, which would be a great visualization tool to see where exactly the highest concetrations are, as well
++ We may take advantage of Leaflet.js to create heatmaps, which would be a great visualization tool to see where exactly the highest concentrations are, as well
 as being able to see GDP, PCI, population density overlaying those maps. For our final presentation we'll use Tableau.
 
 ## Communication
 
-Our team will be communicating through Slack, keeping track of tasks through Trello , and hold face to face meetings through Zoom.
+Our team will be communicating through Slack, keeping track of tasks through our project board on Trello , regular meetings through Zoom.
