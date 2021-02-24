@@ -2,8 +2,8 @@
 
 //I have to do this, module imports not working
 
-const json = require("../jsontoparse.json");
-const statecapitals = require("../us_state_capitals.json")
+const json = require("jsondata/jsontoparse.json");
+const statecapitals = require("jsondata/us_state_capitals.json")
 
 let infections2016 = json["2016 Infection Rates"];
 let GDP2016 = json["GDP 2016"];

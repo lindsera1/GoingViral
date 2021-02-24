@@ -1,5 +1,5 @@
-const json = require("../jsontoparse.json");
-const statecapitals = require("../us_state_capitals.json")
+const json = require("./jsondata/jsontoparse.json");
+const statecapitals = require("./jsondata/us_state_capitals.json")
 
 
 // let statecapitals = JSON.parse(json);
@@ -83,7 +83,3 @@ for([key,value] of Object.entries(statecapitals)){
     i++;
 }
 
-module.exports = {'infections': infections2016arrayexport, 'GDP': GDP2016array, "PCI": PCI2016array, "uninsured": uninsured2016array, 'populationDensity': populationDensity2016array};
-
-
-console.log(infections2016array[0]['location']);
