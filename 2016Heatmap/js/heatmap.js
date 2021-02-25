@@ -1,112 +1,122 @@
 
 
-//I have to do this, module imports not working
-
-const json = require("jsondata/jsontoparse.json");
-const statecapitals = require("jsondata/us_state_capitals.json")
-
-let infections2016 = json["2016 Infection Rates"];
-let GDP2016 = json["GDP 2016"];
-let PCI2016 = json["2016 PCI"];
-let uninsured2016 = json["Uninsured Rate 2016"];
-let populationDensity2016 = json["2016_population_density"];
-
-
 let infections2016array = [];
 let GDP2016array = [];
 let PCI2016array = [];
 let uninsured2016array = [];
 let populationDensity2016array =[];
 
-for([key,value] of Object.entries(infections2016)){
-    let Obj = {};
-    Obj.State = key;
-    Obj.InfectionRates = value;
-    infections2016array.push(Obj);
-}
-for([key,value] of Object.entries(GDP2016)){
-    let Obj = {};
-    Obj.State = key;
-    Obj.GDP = value;
-    GDP2016array.push(Obj);
-}
-for([key,value] of Object.entries(PCI2016)){
-    let Obj = {};
-    Obj.State = key;
-    Obj.PCI = value;
-    PCI2016array.push(Obj);
-}
-for([key,value] of Object.entries(uninsured2016)){
-    let Obj = {};
-    Obj.State = key;
-    Obj.uninsuredRate = value;
-    uninsured2016array.push(Obj);
 
-}
-for([key,value] of Object.entries(populationDensity2016)){
-    let Obj = {};
-    Obj.State = key;
-    Obj.PopulationDensity = value;
-    populationDensity2016array.push(Obj);
-}
+//I have to do this, module imports not working
+(async () => {
+
+    const json = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/2016Heatmap/js/jsondata/jsontoparse.json");
+    const jsontoparse = await json.json();
 
 
+    let infections2016 = jsontoparse["2016 Infection Rates"];
+    let GDP2016 = jsontoparse["GDP 2016"];
+    let PCI2016 = jsontoparse["2016 PCI"];
+    let uninsured2016 = jsontoparse["Uninsured Rate 2016"];
+    let populationDensity2016 = jsontoparse["2016_population_density"];
 
-for(element of populationDensity2016array){
-    element["location"] = new Array();
-}
-for(element of uninsured2016array){
-    element["location"] = new Array();
-}
-for(element of PCI2016array){
-    element["location"] = new Array();
-}
-for(element of GDP2016array){
-    element["location"] = new Array();
-}
-for(element of infections2016array){
-    element["location"] = new Array();
-}
+    for([key,value] of Object.entries(infections2016)){
+        let Obj = {};
+        Obj.State = key;
+        Obj.InfectionRates = value;
+        infections2016array.push(Obj);
+    }
+    for([key,value] of Object.entries(GDP2016)){
+        let Obj = {};
+        Obj.State = key;
+        Obj.GDP = value;
+        GDP2016array.push(Obj);
+    }
+    for([key,value] of Object.entries(PCI2016)){
+        let Obj = {};
+        Obj.State = key;
+        Obj.PCI = value;
+        PCI2016array.push(Obj);
+    }
+    for([key,value] of Object.entries(uninsured2016)){
+        let Obj = {};
+        Obj.State = key;
+        Obj.uninsuredRate = value;
+        uninsured2016array.push(Obj);
 
-let i = 0;
+    }
+    for([key,value] of Object.entries(populationDensity2016)){
+        let Obj = {};
+        Obj.State = key;
+        Obj.PopulationDensity = value;
+        populationDensity2016array.push(Obj);
+    }
 
-for([key,value] of Object.entries(statecapitals)){
-    infections2016array[i]["location"][0] = value["lat"];
-    infections2016array[i]["location"][1] = value["long"];
-    GDP2016array[i]["location"][0] = value["lat"];
-    GDP2016array[i]["location"][1] = value["long"];
-    PCI2016array[i]["location"][0] = value["lat"];
-    PCI2016array[i]["location"][1] = value["long"];
-    uninsured2016array[i]["location"][0] = value["lat"];
-    uninsured2016array[i]["location"][1] = value["long"];
-    populationDensity2016array[i]["location"][0] = value["lat"];
-    populationDensity2016array[i]["location"][1] = value["long"];
-    i++;
-}
 
+
+    for(element of populationDensity2016array){
+        element["location"] = new Array();
+    }
+    for(element of uninsured2016array){
+        element["location"] = new Array();
+    }
+    for(element of PCI2016array){
+        element["location"] = new Array();
+    }
+    for(element of GDP2016array){
+        element["location"] = new Array();
+    }
+    for(element of infections2016array){
+        element["location"] = new Array();
+    }
+
+    const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/2016Heatmap/js/jsondata/us_state_capitals.json");
+    const data = await response.json();
+    
+    let i = 0;
+
+    for([key,value] of Object.entries(data)){
+        infections2016array[i]["location"][0] = value["lat"];
+        infections2016array[i]["location"][1] = value["long"];
+        GDP2016array[i]["location"][0] = value["lat"];
+        GDP2016array[i]["location"][1] = value["long"];
+        PCI2016array[i]["location"][0] = value["lat"];
+        PCI2016array[i]["location"][1] = value["long"];
+        uninsured2016array[i]["location"][0] = value["lat"];
+        uninsured2016array[i]["location"][1] = value["long"];
+        populationDensity2016array[i]["location"][0] = value["lat"];
+        populationDensity2016array[i]["location"][1] = value["long"];
+        i++;
+    }
+})();
 //End of necessary code
+console.log(infections2016array);
 
 //Creating the three layers to visualize differently
 let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
-	accessToken: API_KEY
+	accessToken: API_key
 });
 
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
-	accessToken: API_KEY
+	accessToken: API_key
 });
 
 let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
-	accessToken: API_KEY
+	accessToken: API_key
 });
 
 //Creating the actual map
-let map = L.map('mapid').setView([40.7, -94.5], 4);
+let map = L.map('mapid', {
+	center: [40.7, -94.5],
+	zoom: 3,
+	layers: [satelliteStreets]
+});
 
 // Create a base layer that holds all three maps.
 let baseMaps = {
@@ -119,13 +129,13 @@ let Viral_Concetration_2016 = new L.LayerGroup();
 let GDP_2016 = new L.LayerGroup();
 let Population_density_2016 = new L.LayerGroup();
 let PCI_2016 = new L.LayerGroup();
-let Uninsured_2016 = L.LayerGroup();
+let Uninsured_2016 = new L.LayerGroup();
     
 
 // Add a reference to the viral concentration and socioeconomic metrics groups to the overlays object.
 let overlays = {
     "Viral_Concentration_2016": Viral_Concetration_2016,
-    "GDP_2016": allEarthquakes,
+    "GDP_2016": GDP_2016,
     "PCI_2016": PCI_2016,
     "Population_density_2016": Population_density_2016,
     "Uninsured_rates_2016": Uninsured_2016
@@ -135,6 +145,8 @@ let overlays = {
 // Then we add a control to the map that will allow the user to change which
 // layers are visible.
 L.control.layers(baseMaps, overlays).addTo(map);
+
+
   
  // This function determines the color of the marker based on the magnitude of the earthquake.
  function getGDPColor(metric) {
@@ -277,32 +289,25 @@ L.control.layers(baseMaps, overlays).addTo(map);
   }
   
 
-d3.json("https://gist.githubusercontent.com/mcwhittemore/1f81416ff74dd64decc6/raw/f34bddb3bf276a32b073ba79d0dd625a5735eedc/usa-state-capitals.geojson").then(function(data){
-
-    L.geoJSON(data, {
-        pointToLayer: function(feature, latlng) {
-            return L.marker(latlng)
-            .bindPopup("<h2>" + feature.properties.state + "</h2>")
-        }
-    });
-})
-
 // Loop through the state array and create one marker for each city.
 infections2016array.forEach(state => {
     L.circleMarker(state.location, {
-        radius: getPopDensityRadius(state.InfectionRates),
-        fillcolor: getPopDensityColor(state.InfectionRates),
+        radius: getViralConcentrationRadius(state.InfectionRates),
+        fillcolor: getViralConcentrationColor(state.InfectionRates),
         opacity: 1,
         fillOpacity: 1,
         weight: 0.5
     })
     .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.InfectionRates + " percent of the population infected</h2>")
-  .addTo(map);
+  .addTo(Viral_Concetration_2016);
 });
+
+Viral_Concetration_2016.addTo(map);
+
 GDP2016array.forEach(state => {
     L.circleMarker(state.location, {
-        radius: getPopDensityRadius(state.GDP),
-        fillcolor: getPopDensityColor(state.GDP),
+        radius: getGDPRadius(state.GDP),
+        fillcolor: getGDPColor(state.GDP),
         opacity: 1,
         fillOpacity: 1,
         weight: 0.5,
@@ -310,8 +315,11 @@ GDP2016array.forEach(state => {
         stroke: true
     })
     .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.GDP + " gross domestic product, in millions of dollars</h2>")
-  .addTo(map);
+  .addTo(GDP_2016);
 });
+
+GDP_2016.addTo(map);
+
 PCI2016array.forEach(state => {
     L.circleMarker(state.location, {
         radius: getPCIRadius(state.PCI),
@@ -320,13 +328,16 @@ PCI2016array.forEach(state => {
         fillOpacity: 1,
         weight: 0.5,
         color: "#000000",
-        stroke: true
     })
     .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.PCI + " per capita income</h2>")
-  .addTo(map);
+  .addTo(PCI_2016);
+  PCI_2016.addTo(map);
 });
+
+
+
 uninsured2016array.forEach(state => {
-    L.circleMarker(state.location, {
+    L.circle(state.location, {
         radius: getUninsuredRadius(state.uninsuredRate),
         fillcolor: getUninsuredColor(state.uninsuredRate),
         opacity: 1,
@@ -336,12 +347,18 @@ uninsured2016array.forEach(state => {
         stroke: true
     })
     .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.uninsuredRate + " percent of the population uninsured</h2>")
-  .addTo(map);
+  .addTo(Uninsured_2016);
+
 });
+Uninsured_2016.addTo(map);
+
+
+
 populationDensity2016array.forEach(state => {
-    L.circleMarker(state.location, {
-        radius: getPopDensityRadius(state.PopulationDensity),
-        fillcolor: getPopDensityColor(state.PopulationDensity),
+    console.log(state);
+    L.circle([90,90], {
+        radius: 50,
+        fillcolor: getPopDensityColor(0.1),
         opacity: 1,
         fillOpacity: 1,
         weight: 0.5,
@@ -349,5 +366,7 @@ populationDensity2016array.forEach(state => {
         stroke: true
     })
     .bindPopup("<h1>" + state.State + "<h1><hr><h2>" + state.PopulationDensity + " people per square mile</h2>")
-  .addTo(map);
+  .addTo(Population_density_2016);
 });
+
+Population_density_2016.addTo(map);

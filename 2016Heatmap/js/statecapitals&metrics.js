@@ -1,5 +1,5 @@
 const json = require("./jsondata/jsontoparse.json");
-const statecapitals = require("./jsondata/us_state_capitals.json")
+const statecapitals = require("./jsondata/us_state_capitals.json");
 
 
 // let statecapitals = JSON.parse(json);
@@ -83,3 +83,4 @@ for([key,value] of Object.entries(statecapitals)){
     i++;
 }
 
+console.log(infections2016array);
