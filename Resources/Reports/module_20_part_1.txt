@@ -1,0 +1,25 @@
+#Tasks performed this week:
+
+1. Extracted data from the CDC FluView Interactive portal
+(https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html)
+
+2. Specifically used cases reported to ILINET system by each state.
+
+3. Cleaned data to report flu cases by state for the years 2016-2019.
+
+4. Uploaded cleaned data to project database
+
+5. Developed a linear regression machine learning model to evaluate the 
+possibility of linear relationship between the percentage of people uninsured 
+per state to the number of flu cases per state for each year starting with 
+2016 and ending with 2019.
+
+6. Began developing multi-linear regression model for the combination of
+population, gdp, and uninsured rate per state vs the flu cases per state for 
+each year starting in 2016 and ending in 2019.
+
+7. Developed framework for the group presentation.
+
+8. Recleaned flu data to look at flu cases as percentage of population of 
+state.
+
