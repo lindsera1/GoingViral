@@ -14,11 +14,11 @@ async function parseit(){
     const jsontoparse18 = await json.json();
 
 
-    let infections2018 = jsontoparse18["2016 Infection Rates"];
-    let GDP2018 = jsontoparse18["GDP 2016"];
-    let PCI2018 = jsontoparse18["2016 PCI"];
-    let uninsured2018 = jsontoparse18["Uninsured Rate 2016"];
-    let populationDensity2018 = jsontoparse18["2016_population_density"];
+    let infections2018 = jsontoparse18["2018 Infection Rates"];
+    let GDP2018 = jsontoparse18["GDP 2018"];
+    let PCI2018 = jsontoparse18["2018 PCI"];
+    let uninsured2018 = jsontoparse18["Uninsured Rate 2018"];
+    let populationDensity2018 = jsontoparse18["2018_population_density"];
 
     for([key,value] of Object.entries(infections2018)){
         let Obj = {};
@@ -71,11 +71,11 @@ async function parseit(){
     }
 
     const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/us_state_capitals.json");
-    const data = await response.json();
+    const data18 = await response.json();
     
     let i = 0;
 
-    for([key,value] of Object.entries(data)){
+    for([key,value] of Object.entries(data18)){
         infections2018array[i]["location"][0] = value["lat"];
         infections2018array[i]["location"][1] = value["long"];
         GDP2018array[i]["location"][0] = value["lat"];
@@ -130,11 +130,11 @@ async function parseit(){
 
     // Add a reference to the viral concentration and socioeconomic metrics groups to the overlays object.
     let overlays = {
-        "Viral_Concentration_2016": Viral_Concetration_2018,
-        "GDP_2016": GDP_2018,
-        "PCI_2016": PCI_2018,
-        "Population_density_2016": Population_density_2018,
-        "Uninsured_rates_2016": Uninsured_2018
+        "Viral_Concentration_2018": Viral_Concetration_2018,
+        "GDP_2018": GDP_2018,
+        "PCI_2018": PCI_2018,
+        "Population_density_2018": Population_density_2018,
+        "Uninsured_rates_2018": Uninsured_2018
     };
 
 
@@ -316,7 +316,7 @@ async function parseit(){
 
     GDP_2018.addTo(map);
 
-    PCI2016array.forEach(state => {
+    PCI2018array.forEach(state => {
         L.circleMarker(state.location, {
             radius: getPCIRadius(state.PCI),
             fillcolor: getPCIColor(state.PCI),
