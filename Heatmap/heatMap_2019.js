@@ -10,46 +10,46 @@ let populationDensity2019array = new Array();
 //I have to do this, module imports not working
 async function parseit(){
 
-    const json = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/jsontoparse_2019.json");
-    const jsontoparse_2019 = await json.json();
+    const json = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/jsontoparse_2019.json");
+    const jsontoparse = await json.json();
 
 
-    let infections2019 = jsontoparse_2019["2019 Infection Rates"];
-    let GDP2019 = jsontoparse_2019["GDP 2019"];
-    let PCI2019 = jsontoparse_2019["2019 PCI"];
-    let uninsured2019 = jsontoparse_2019["Uninsured Rate 2019"];
-    let populationDensity2019 = jsontoparse_2019["2019_population_density"];
+    let infections2019 = jsontoparse["2019 Infection Rates"];
+    let GDP2019 = jsontoparse["GDP 2019"];
+    let PCI2019 = jsontoparse["2019 PCI"];
+    let uninsured2019 = jsontoparse["Uninsured Rate 2019"];
+    let populationDensity2019 = jsontoparse["2019_population_density"];
 
     for([key,value] of Object.entries(infections2019)){
         let Obj = {};
         Obj.State = key;
         Obj.InfectionRates = value;
-        infections2019array.push(Obj);
+        infections2016array.push(Obj);
     }
     for([key,value] of Object.entries(GDP2019)){
         let Obj = {};
         Obj.State = key;
         Obj.GDP = value;
-        GDP2019array.push(Obj);
+        GDP2016array.push(Obj);
     }
     for([key,value] of Object.entries(PCI2019)){
         let Obj = {};
         Obj.State = key;
         Obj.PCI = value;
-        PCI2019array.push(Obj);
+        PCI2016array.push(Obj);
     }
     for([key,value] of Object.entries(uninsured2019)){
         let Obj = {};
         Obj.State = key;
         Obj.uninsuredRate = value;
-        uninsured2019array.push(Obj);
+        uninsured2016array.push(Obj);
 
     }
     for([key,value] of Object.entries(populationDensity2019)){
         let Obj = {};
         Obj.State = key;
         Obj.PopulationDensity = value;
-        populationDensity2019array.push(Obj);
+        populationDensity2016array.push(Obj);
     }
 
 
@@ -70,7 +70,7 @@ async function parseit(){
         element["location"] = new Array();
     }
 
-    const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/2016Heatmap/js/jsondata/us_state_capitals.json");
+    const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/us_state_capitals.json");
     const data = await response.json();
     
     let i = 0;
@@ -130,11 +130,11 @@ async function parseit(){
 
     // Add a reference to the viral concentration and socioeconomic metrics groups to the overlays object.
     let overlays = {
-        "Viral_Concentration_2016": Viral_Concetration_2019,
-        "GDP_2016": GDP_2019,
-        "PCI_2016": PCI_2019,
-        "Population_density_2016": Population_density_2019,
-        "Uninsured_rates_2016": Uninsured_2019
+        "Viral_Concentration_2019": Viral_Concetration_2019,
+        "GDP_2019": GDP_2019,
+        "PCI_2019": PCI_2019,
+        "Population_density_2019": Population_density_2019,
+        "Uninsured_rates_2019": Uninsured_2019
     };
 
 
