@@ -11,45 +11,45 @@ let populationDensity2019array = new Array();
 async function parseit(){
 
     const json = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/jsontoparse_2019.json");
-    const jsontoparse = await json.json();
+    const jsontoparse19 = await json.json();
 
 
-    let infections2019 = jsontoparse["2019 Infection Rates"];
-    let GDP2019 = jsontoparse["GDP 2019"];
-    let PCI2019 = jsontoparse["2019 PCI"];
-    let uninsured2019 = jsontoparse["Uninsured Rate 2019"];
-    let populationDensity2019 = jsontoparse["2019_population_density"];
+    let infections2019 = jsontoparse19["2019 Infection Rates"];
+    let GDP2019 = jsontoparse19["GDP 2019"];
+    let PCI2019 = jsontoparse19["2019 PCI"];
+    let uninsured2019 = jsontoparse19["Uninsured Rate 2019"];
+    let populationDensity2019 = jsontoparse19["2019_population_density"];
 
     for([key,value] of Object.entries(infections2019)){
         let Obj = {};
         Obj.State = key;
         Obj.InfectionRates = value;
-        infections2016array.push(Obj);
+        infections2019array.push(Obj);
     }
     for([key,value] of Object.entries(GDP2019)){
         let Obj = {};
         Obj.State = key;
         Obj.GDP = value;
-        GDP2016array.push(Obj);
+        GDP2019array.push(Obj);
     }
     for([key,value] of Object.entries(PCI2019)){
         let Obj = {};
         Obj.State = key;
         Obj.PCI = value;
-        PCI2016array.push(Obj);
+        PCI2019array.push(Obj);
     }
     for([key,value] of Object.entries(uninsured2019)){
         let Obj = {};
         Obj.State = key;
         Obj.uninsuredRate = value;
-        uninsured2016array.push(Obj);
+        uninsured2019array.push(Obj);
 
     }
     for([key,value] of Object.entries(populationDensity2019)){
         let Obj = {};
         Obj.State = key;
         Obj.PopulationDensity = value;
-        populationDensity2016array.push(Obj);
+        populationDensity2019array.push(Obj);
     }
 
 
@@ -71,11 +71,11 @@ async function parseit(){
     }
 
     const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/us_state_capitals.json");
-    const data = await response.json();
+    const data19 = await response.json();
     
     let i = 0;
 
-    for([key,value] of Object.entries(data)){
+    for([key,value] of Object.entries(data19)){
         infections2019array[i]["location"][0] = value["lat"];
         infections2019array[i]["location"][1] = value["long"];
         GDP2019array[i]["location"][0] = value["lat"];
