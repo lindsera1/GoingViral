@@ -1,103 +1,60 @@
 
-# GoingViral - An Explosive Project
+# Let's Go Viral 
 
 ## Summary
 
-Could there be a better way to handle the vaccination of the US to slow spread, reduce mortality and hinder virus mutation rates, by simply changing our 
-approach to how and who we vaccinate? As of the past few weeks, we managed great success over the coronavirus in targeting the most susceptible demographic
-and getting them vaccinated, but are we slowing down the virus as much as we could be? There is now fear of mutated variants that could reset us back to square
-one, as virologists are calling this now a "race against the virus". 
+When taking a looking at viral concentration, could areas be better prepared for a flu season or outbreak knowing where their population sat in regards to probable infections therefor, slowing the spread and having preventative and treatment protocol in place. By taking a look at past flue cases, can an area's case percentage be predicted when considering social metrics such as population density, gross domestic product (GDP), per capita income (PCI), and medically uninsured rates.
 
-Our team is going to examine flu viral case load/concentrations from the years 2016 to 2019 for all 50 states and Washington D.C. 
-and measure the congruence of metrics such as GDP, PCI, population density, and the percentage of the population uninsured and how these metrics impact the viral 
-concentrations for each state. The model will predict the most susceptible populations to influenza infections, and perhaps propose a new approach 
-to the target population we are vaccinating.
+This analysis was completed by using 50 states flu cases data and their percentages to population; then creating a machine learning model to examine if there is a correlation to the four selected social factors and what the predictability outcome would be. The model will generate predictions to show viral concentrations.
 
+The **Let's Go Viral** team:
+Matt Kaufmann, Ryan Lindsey, Jessica Dafler, Patrick Ekanga
 
-
-The **Let's Go Viral** team is composed of the following people:
-1. Matt Kaufmann
-2. Ryan Lindsey
-3. Jessica Dafler
-4. Patrick Ekanga.
-
-### Interesting Notes
-
-The initial spark for the idea of this project came firstly out of my interest in public health as I come from a toxicology background and my teammates having 
-backgrounds in engineering, finance, and tech, combined with the burning curiosity of "could we better handle the race against the current pandemic?" We wanted to 
-look at how viruses spread, and what could have caused this one to spread like wildfire? Of course, one of the most dangerous aspects of a virus is its ability to 
-rapidly mutate, which can only happen inside of a host. When the virus hijacks your lung tissue and creates many copies of itself, small mutations in the virus RNA 
-cause this virus to be slightly different from the one that infected you. If this happens enough times (AKA enough infections occur) you may occasionally get a 
-strain of the virus far more aggressive and virulent.
-
-When you look at it from this perspective, the approach of vaccinating the most susceptible to complications first, rather than the most susceptible to infection, 
-may actually be doing more harm than good. This is the question we are setting out to solve, who are these people most susceptible to the virus?
-
-## Data Sets
+## Data Exploration
 
 ### Flu Data
 
 
-+ As of now, we have secured a great resource on influenza data from the past 10 years in all 50 states across the USA. This data is coming from the CDC's FluView 
++ Data for flu cases for years 2016 - 2019 for all 50 states:
 
-Interactive application: [flu_data](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html).
-
-Interactive application: https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html 
+Interactive application: [Flu Data](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html)
 
 ### Socioeconomic metrics
 
-+  For GDP (gross domestic product), we downloaded files containing GDP of every states and county from the past 4 years. The dataset was cleaned with with python in pandas to be properly used thereafter. The link to the website is [gdp_link](https://apps.bea.gov/regional/downloadzip.cfm).
++  GDP - The files containing GDP by state states and county for years 2016 - 2019 were cleaned with python in pandas to be properly categorized for doing later in the analysis. Data source: [GDP Data](https://apps.bea.gov/regional/downloadzip.cfm)
 
-+ For PCI (per capita income) I have sourced an excel spreadsheet from the same source with the same metrics: Link the the to the dataset is[PCI](https://www.bea.gov/data/income-saving/personal-income-county-metro-and-other-areas).
++ PCI -  The files used for PCI were sourced for years 2016 - 2019 were cleaned and merged with python in pandas to create the final data frame for all states.  Data source: [PCI Data](https://fred.stlouisfed.org/release?rid=110)
 
-+ For population density, we  sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
-convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
++ Population Density - The CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
 
-
-
-+ For PCI (per capita income) the data source used was a combination of per state csv files combined to create a dataset to reflect the annual medial personal income per state. Source: https://fred.stlouisfed.org/release?rid=110
-
-+ For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at [uninsured](https://www.census.gov/library/publications/2020/demo/p60-271.html).
-
-
-+ For population density, I have sourced CSV files for both total square mileage per county, as well as population in CSV files, and will need some further ETL to
-convert to population density per county. In case we decide to scale up, I have also included the same information on a statewide scale.
-
-+ For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Provided by the  United States Census Bureau at https://www.census.gov/library/publications/2020/demo/p60-271.html
++ Uninsured Status - For uninsured percentages by state, the CSV files for health coverage status and type of coverage measured by state. Data Source: [Uninsured Data](https://www.census.gov/library/publications/2020/demo/p60-271.html)
 
 
 ## Technologies
 
+The following various technologies will be used throughout the completion of this project:
 
-While we'll maintain an open mind about the tools that will best suit us in our data journey, we do have an idea of what will be needed to at least execute our 
-desired goal.
++Data Exploration/ETL: Pandas in Python
++Database: PostgreSQL, AWS, Heroku, DBeaver
++Machine Learning: Random Forest Regression SKLearn Library
++Visualization: Prezi, Matplotlib, Javascript (Leaflet.js)
 
-**Programming Languages**
-
-+ We will use Python for all statistical analysis, data cleaning, and ML model training. While R is great for statistics, libraries such as SciPy, NumPy,
-and even Matplotlib are so well integrated, as well as Pandas, that for the sake of work flow, we'll stick to Python.
-
-+ Secondly we'll use Javascript, as this will open up Leaflet.js, plotly and seaborn for correlation.
-
-**Databases**
-
-
-+ I do believe that for the sake of being able to do joins, relate primary and foreign keys, an SQL databases like Postgres will serve our needs best. We are using the database administration tool DBeaver:
+**Databases ERD**
 <img src="ER_Diagram.png" alt="ER_Diagram">
-
-
-+ We are using postgres database and hosted on Heroku. Every team member will be able to upload and query the SQL database, credentials created for each one.
   
 
-**Machine Learning Models**
+**Data Analysis**
 
-+ This is a multi-factorial problem, as we'll be looking at how viral concentration corresponds to the factors mentioned above. We may also need to utilize some resampling techniques if the influenza rates are too low in comparison to the total population. Linear (Single and Multiple) Regression models show that no independent variable can predict viral concentration. The Random Forest Regression and KMeans clustering models are being used to test cross validation and explore the variability of the variables for patterns of similarity and to determine the predictive power of the variable in regards to viral concentration with respect to state. 
+Primary use of data analysis resulted from a developed Random Forest Regressor machine learning model with a MSRE of .21.
+
+[Random Forest Classifier]("RM_ML_Viz.ipynb")
 
 **Data Visualization**
 
-+ We may take advantage of Leaflet.js to create heatmaps, which would be a great visualization tool to see where exactly the highest concentrations are, as well
-as being able to see GDP, PCI, population density overlaying those maps. For our final presentation we'll use Tableau.
+Presentation: [Prezi Let's Go Viral](https://prezi.com/view/wcYeHPzKQQVd38lteoqp/)
 
 ## Communication
 
-Our team will be communicating through Slack, keeping track of tasks through our project board on Trello , regular meetings through Zoom.
++Slack
++Trello: [Let's Go Viral Trello Board](https://trello.com/b/3U1mTA7q/project-board-use-this-one)
++Zoom
