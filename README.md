@@ -45,9 +45,9 @@ The following various technologies will be used throughout the completion of thi
 
 **Data Analysis**
 
-Primary use of data analysis resulted from a developed Random Forest Regressor machine learning model with a MSRE of .21.
+Primary use of data analysis resulted from a developed Random Forest Regressor machine learning model with a MSE of .21.
 
-[Random Forest Classifier]("RM_ML_Viz.ipynb")
+[Random Forest Classifier](https://github.com/lindsera1/GoingViral/blob/main/RM_ML_Viz.ipynb)
 
 **Data Visualization**
 
