@@ -259,19 +259,19 @@ async function parseit(){
         return "#c6b0ff";
         }
         if (metric > 1) {
-        return "#aa8aff";
+        return "009999";
         }
         if (metric < 1.5) {
-        return "#7e4fff";
+        return "#000099";
         }
         if (metric < 2) {
-            return "#6830ff";
+            return "#009900";
         }
         if (metric < 2.5) {
-            return "#4500ff";
+            return "#999900";
         }
         if (metric < 3) {
-            return "#25008a";
+            return "#990000";
         }
         return "#98ee00";
     }
@@ -288,13 +288,13 @@ async function parseit(){
     // Loop through the state array and create one marker for each city.
     infections2016array.forEach(state => {
         L.circleMarker(state.location, {
-            radius: getViralConcentrationRadius(state.InfectionRates) * 5,
+            radius: getViralConcentrationRadius(state.InfectionRates)/0.125,
             fillcolor: getViralConcentrationColor(state.InfectionRates),
             opacity: 1,
             fillOpacity: 1,
             weight: 0.5
         })
-        .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.InfectionRates + " percent of the population infected</h2>")
+        .bindPopup("<h1>" + state.State + "<h1><hr><h2>" + state.InfectionRates + " percent of the population infected</h2>")
     .addTo(Viral_Concetration_2016);
     });
 
@@ -302,7 +302,7 @@ async function parseit(){
 
     GDP2016array.forEach(state => {
         L.circleMarker(state.location, {
-            radius: getGDPRadius(state.GDP)/700000,
+            radius: getGDPRadius(state.GDP)/200000,
             fillcolor: getGDPColor(state.GDP),
             opacity: 1,
             fillOpacity: 1,
@@ -310,7 +310,7 @@ async function parseit(){
             color: "#000000",
             stroke: true
         })
-        .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.GDP + " gross domestic product, in millions of dollars</h2>")
+        .bindPopup("<h1>" + state.State + "<h1><hr><h2>" + state.GDP + " gross domestic product, in millions of dollars</h2>")
     .addTo(GDP_2016);
     });
 
@@ -318,14 +318,14 @@ async function parseit(){
 
     PCI2016array.forEach(state => {
         L.circleMarker(state.location, {
-            radius: getPCIRadius(state.PCI),
+            radius: getPCIRadius(state.PCI)/60000,
             fillcolor: getPCIColor(state.PCI),
             opacity: 1,
             fillOpacity: 1,
             weight: 0.5,
             color: "#000000",
         })
-        .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.PCI + " per capita income</h2>")
+        .bindPopup("<h1>" + state.State + "<h1><hr><h2>" + state.PCI + " per capita income</h2>")
     .addTo(PCI_2016);
     PCI_2016.addTo(map);
     });
@@ -334,7 +334,7 @@ async function parseit(){
 
     uninsured2016array.forEach(state => {
         L.circleMarker(state.location, {
-            radius: getUninsuredRadius(state.uninsuredRate),
+            radius: getUninsuredRadius(state.uninsuredRate)/4,
             fillcolor: getUninsuredColor(state.uninsuredRate),
             opacity: 1,
             fillOpacity: 1,
@@ -342,7 +342,7 @@ async function parseit(){
             color: "#000000",
             stroke: true
         })
-        .bindPopup("<h1>" + state.State + "<h1><br><h2>" + state.uninsuredRate + " percent of the population uninsured</h2>")
+        .bindPopup("<h1>" + state.State + "<h1><hr><h2>" + state.uninsuredRate + " percent of the population uninsured</h2>")
     .addTo(Uninsured_2016);
 
     });
@@ -353,7 +353,7 @@ async function parseit(){
     populationDensity2016array.forEach(state => {
         
         L.circleMarker(state.location, {
-            radius: getPopDensityRadius(state.PopulationDensity),
+            radius: getPopDensityRadius(state.PopulationDensity)/100,
             fillcolor: getPopDensityColor(state.PopulationDensity),
             opacity: 1,
             fillOpacity: 1,
