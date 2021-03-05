@@ -6,3 +6,19 @@ body,
   padding: 0;
   margin: 0;
 }
+
+.bg-dark {
+
+  color: #ffffff;
+}
+
+.jumbotron {
+  background-image: url("https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/1800x1200_virus_3d_render_red_03_other.jpg");
+  background-size: stretch;
+  text-align: center;
+}
+
+.shadow-text{
+  text-shadow: 2px 2px #000000;
+
+}
