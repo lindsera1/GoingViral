@@ -1,0 +1,5 @@
+-I cleaned and calculated the population density data set and imported into the database
+- I cleaned the uninsured rates data set and imported it into the database
+- I performed linear regression on population density vs flu percentages by state
+- I partially cleaned the Pci dataset
+- I performed random forest regression on all data
