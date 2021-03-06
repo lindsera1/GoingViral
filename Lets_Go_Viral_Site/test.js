@@ -147,13 +147,13 @@ async function parseit(){
     // This function determines the color of the marker based on the magnitude of the earthquake.
     function getGDPColor(metric) {
         if (metric < 500000) {
-        return "#ff9999";
+            return "#ff9999";
         }
         if (metric < 1000000) {
-        return "#ff6363";
+            return "#ff6363";
         }
         if (metric < 1500000) {
-        return "#ff2b2b";
+            return "#ff2b2b";
         }
         if (metric < 2000000) {
             return "##ff0000";
@@ -175,13 +175,13 @@ async function parseit(){
     // This function determines the color of the marker based on the magnitude of the earthquake.
     function getPCIColor(metric) {
         if (metric < 40000) {
-        return "#fcffbf";
+            return "#fcffbf";
         }
         if (metric < 50000) {
-        return "#f9ff80";
+            return "#f9ff80";
         }
         if (metric < 60000) {
-        return "#f5ff30";
+            return "#f5ff30";
         }
         if (metric < 70000) {
             return "#f3ff00";
@@ -220,7 +220,7 @@ async function parseit(){
     // This function determines the radius of the earthquake marker based on its magnitude.
     function getUninsuredRadius(metric) {
         if (metric === 0) {
-        return 1;
+            return 1;
         }
         return metric * 4;
     }
@@ -228,13 +228,13 @@ async function parseit(){
     // This function determines the color of the marker based on the magnitude of the earthquake.
     function getPopDensityColor(metric) {
         if (metric < 250) {
-        return "#bdfff9";
+            return "#bdfff9";
         }
         if (metric < 500) {
-        return "#70fff2";
+            return "#70fff2";
         }
         if (metric < 750) {
-        return "#38ffff";
+            return "#38ffff";
         }
         if (metric < 1000) {
             return "#00eeff";
@@ -248,7 +248,7 @@ async function parseit(){
     // This function determines the radius of the earthquake marker based on its magnitude.
     function getPopDensityRadius(metric) {
         if (metric === 0) {
-        return 1;
+            return 1;
         }
         return metric * 4;
     }
@@ -256,13 +256,13 @@ async function parseit(){
     // This function determines the color of the marker based on the magnitude of the earthquake.
     function getViralConcentrationColor(metric) {
         if (metric < 0.5) {
-        return "#c6b0ff";
+            return "#c6b0ff";
         }
         if (metric > 1) {
-        return "009999";
+            return "009999";
         }
         if (metric < 1.5) {
-        return "#000099";
+            return "#000099";
         }
         if (metric < 2) {
             return "#009900";
