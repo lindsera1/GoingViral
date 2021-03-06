@@ -10,7 +10,7 @@ let populationDensity2016array = new Array();
 //I have to do this, module imports not working
 async function parseit(){
 
-    const json = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/jsontoparse.json");
+    const json = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap%20copy/js/jsondata/jsontoparse.json");
     const jsontoparse = await json.json();
 
 
@@ -70,7 +70,7 @@ async function parseit(){
         element["location"] = new Array();
     }
 
-    const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap/js/jsondata/us_state_capitals.json");
+    const response  = await fetch("https://raw.githubusercontent.com/lindsera1/GoingViral/main/Heatmap%20copy/js/jsondata/us_state_capitals.json");
     const data = await response.json();
     
     let i = 0;
