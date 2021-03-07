@@ -57,7 +57,7 @@ The following various technologies will be used throughout the completion of thi
 
 ## Presentation Link
 
-![Presentation](https://lindsera1.github.io/GoingViral/Lets_Go_Viral_Site)
+[Presentation](https://lindsera1.github.io/GoingViral/Lets_Go_Viral_Site)
 
 ## Machine Learning Model
 
