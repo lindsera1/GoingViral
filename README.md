@@ -81,7 +81,11 @@ data was not linear at all, and so we needed a model that could look at the deep
 Random Forest seemed to be our best choice because we didn't have neough variables for deep learning, and we did have a 
 relatively smaller sample size.
 
-+How we have trained the model: We've combined data from 2016 to 2018 in order to see
++ How we have trained the model: We've combined data from 2016 to 2018 in order to set our model up to predict 2019 data, and 
+compare the 2019 predictions against the 2019 true values. 
+
++ Describe current accuracy scores: As of now, we have an accuracy score of .45 RMSE, which is satisfactory. Currently we are
+tweaking some parameters, such as sample size, and n-estimators on a newer model to see if we get better performance. 
 
 
 
