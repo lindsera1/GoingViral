@@ -17,8 +17,8 @@ Presentation: [Prezi Let's Go Viral](https://lindsera1.github.io/GoingViral/Lets
 Topic: Using 2016-2019 flu data, can we model a relationship between viral concentration and the four factors of GDP, PCI,
 uninsured rates, and population density in all 50 states.
 
-Why we chose it? We chose this topic becuase we wanted to take a deeper look at the relationship between social 
-opportunity and public health, and create a tool that could help our healthcare officials and adminstrators target the 
+Why we chose it? We chose this topic because we wanted to take a deeper look at the relationship between social 
+opportunity and public health, and create a tool that could help our healthcare officials and administrators target the 
 areas that could use the most care, thus better help the entire population. 
 
 ## Data Exploration
@@ -43,7 +43,13 @@ Interactive application: [Flu Data](https://gis.cdc.gov/grasp/fluview/fluportald
 
 Primary use of data analysis resulted from a developed Random Forest Regressor machine learning model with a MSE of .21.
 
-[Random Forest Classifier](https://github.com/lindsera1/GoingViral/blob/main/RM_ML_Viz.ipynb)
+[Random Forest Regressor]("RM_ML_Viz.ipynb")
+
+Random Forest Regressor Machine Learning model was used to test and train 2016 - 2018 data and make a prediction for 2019. With the predictions, the visualization created showed the predictions from the RFR versus the actual data from 2019 (with a MSE of .37). 
+
+[2019 Predictions from Random Forest Regressor ML Model]("pred_rfr_2019.ipynb")
+
+<img src="2019_predictions_actuals.png" alt="2019 Predictions vs Actuals">
 
 
 **Technologies**
@@ -68,7 +74,7 @@ After that was done, we saved our data as CSV.
 + Feature engineering: The initial data was very specific, and very little dimensionality reduction was performed. The 
 uninsured rate data had to be extracted from a larger data set of other variables.
 
-+ Training/Testing Split: The data was trained on 2016 to 2018 data, and tested againt 2019 data to see the predictive 
++ Training/Testing Split: The data was trained on 2016 to 2018 data, and tested against 2019 data to see the predictive 
 accuracy.
 
 + Model Choice: upon trying a few different models, including a simple linear regression and a multiple linear regresssion, 
