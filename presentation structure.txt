@@ -1,4 +1,8 @@
-Ryan - introduction & website visualizations
-Jessica - 1st 1/2 data cleaning & last half ml model
-patrick - 2nd 1/2 data cleaning, database, 1st half ml model
-matt - prezi visualizations 
+Ryan - introduction and project objective/purpose
+Patrick -Extraction and Transformation  and machine learning (randon forest regression)
+Jessica - Another Transform process and Loading to DB (SQL) and alternative ML
+Matt - prezi visualizations and ETL and ML support.
+Ryan - website visualization (closing remark)
+
+Time Mgt
+2 minutes maximum
