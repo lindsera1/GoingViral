@@ -1,0 +1,4 @@
+Ryan - introduction & website visualizations
+Jessica - 1st 1/2 data cleaning & last half ml model
+patrick - 2nd 1/2 data cleaning, database, 1st half ml model
+matt - prezi visualizations 
